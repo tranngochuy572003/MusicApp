@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+ >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:background="@drawable/dnmh1_gradient_linear_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp">
+
+
+                <ImageView
+                    android:id="@+id/btnSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/dnmh1_setting" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="81dp"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="Icon"
+                    android:src="@drawable/dnmh1_logo" />
+
+                <TextView
+                    android:id="@+id/txtLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/logo"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Bạn chưa đăng nhập"
+                    android:textColor="#FFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnLogin"
+                    android:layout_width="85dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="121dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/txtLogin"
+                    app:cardBackgroundColor="#4DC4C4"
+                    app:cardCornerRadius="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Đăng nhập"
+                        android:textColor="#FFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="30dp"
+                    android:layout_height="45dp"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+
+                    android:layout_weight="1"
+                    android:alpha="0.56"
+                    app:cardBackgroundColor="#D9DAD2"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:contentDescription="Icon"
+                        android:src="@drawable/dnmh1_download" />
+
+                    <TableLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp">
+
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Nhạc đã tải"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/downloadTrack"
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="1 bài"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </TableLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="30dp"
+                    android:layout_height="45dp"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+
+                    android:layout_weight="1"
+                    android:alpha="0.56"
+                    app:cardBackgroundColor="#D9DAD2"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="Icon"
+                        android:src="@drawable/dnmh1_history" />
+
+                    <TableLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp">
+
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Nghe gần đây"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/listenTrack"
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="27 bài"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </TableLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </TableRow>
+
+            <TableRow>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="30dp"
+                    android:layout_height="75dp"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+
+                    android:layout_weight="1"
+                    android:alpha="0.56"
+                    app:cardBackgroundColor="#D9DAD2"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+
+                        android:contentDescription="Icon"
+                        android:src="@drawable/dnmh1_frameheart" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="22dp"
+
+                        android:contentDescription="Icon"
+                        android:src="@drawable/dnmh1_heart" />
+
+
+                    <TableLayout
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Yêu thích"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#000000"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/favouriteSong"
+                            android:layout_width="10dp"
+                            android:layout_height="30dp"
+                            android:fontFamily="sans-serif-black"
+                            android:text="0 bài"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </TableLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </TableRow>
+        </TableLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.viewpager.widget.ViewPager>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:id="@+id/navForYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:src="@drawable/dnmh1_foryou" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Dành cho bạn"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Second Icon -->
+        <LinearLayout
+            android:id="@+id/navExplore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/dnmh1_explore" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+
+                android:text="Khám phá"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Third Icon -->
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="23dp"
+                android:src="@drawable/dnmh1_mine" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+
+                android:text="Hồ sơ của tôi"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

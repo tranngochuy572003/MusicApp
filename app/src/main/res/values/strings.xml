@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">musicApp</string>
+        <string-array name="countries">
+            <item>VN +84</item>
+            <item>US +1</item>
+            <item>IN +91</item>
+            <item>UK +44</item>
+        </string-array>
+</resources>

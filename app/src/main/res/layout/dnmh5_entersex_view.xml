@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+        <!-- Button bỏ qua ở góc trên cùng -->
+        <TextView
+            android:id="@+id/btnSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Bỏ qua"
+            android:textSize="14sp"
+            android:textColor="#3F3E3E"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Tiêu đề -->
+
+        <!-- Mô tả -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Giới tính của bạn?"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin của bạn sẽ giúp NCT gợi ý nhạc tốt hơn."
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+
+
+        <TextView
+            android:id="@+id/optionMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dnmh5_option_background"
+            android:text="Nam"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/optionFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dnmh5_option_background"
+
+            android:text="Nữ"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/optionOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Khác"
+            android:background="@drawable/dnmh5_option_background"
+
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Nút Hoàn thành -->
+        <Button
+            android:id="@+id/btnComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4DC4C4"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Hoàn thành"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
