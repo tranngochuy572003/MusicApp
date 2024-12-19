@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/dkmh1_maubackground"
+    android:padding="30dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/dkmh1_logo"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="App Logo" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NCT"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="0dp"
+        android:gravity="center" />
+
+    <!-- Login options -->
+
+    <Button
+        android:id="@+id/btnPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#5dc7a3"
+        android:drawableLeft="@drawable/dkmh1_phone"
+        android:paddingLeft="20dp"
+        android:text="Sử dụng số điện thoại"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiếp tục với Facebook"
+        android:textSize="20sp"
+        android:backgroundTint="#333333"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/dkmh1_fb"
+        android:paddingLeft="20dp" />
+
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiếp tục với Google"
+        android:textSize="20sp"
+        android:backgroundTint="#333333"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/dkmh1_google"
+        android:paddingLeft="20dp" />
+
+    <Button
+        android:id="@+id/btnApple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiếp tục với Apple"
+        android:textSize="20sp"
+        android:backgroundTint="#333333"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/dkmh1_apple"
+        android:paddingLeft="20dp" />
+
+    <!-- Sign up -->
+
+    <!-- Privacy policy -->
+
+    <TextView
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Bạn chưa có tài khoản? Đăng ký ngay"
+        android:textColor="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/policyCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/policyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tôi đã đọc, hiểu rõ và tự nguyện đồng ý các điều
+                          khoản liên quan về việc thu thập, xử lý dữ liệu cá
+                          nhân, quyền và nghĩa vụ của tôi được quy định trong
+                          Chính sách bảo mật và Thỏa thuận sử dụng, cũng như
+                          các chính sách khác được ban hành bởi NCT"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="top"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Login with password -->
+    <Button
+        android:id="@+id/btnPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập với mật khẩu"
+        android:backgroundTint="#888888"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="5dp" />
+
+</LinearLayout>
