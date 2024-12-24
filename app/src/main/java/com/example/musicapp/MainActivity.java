@@ -1,17 +1,12 @@
 package com.example.musicapp;
 
 import android.os.Bundle;
-import android.widget.TableLayout;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,5 +15,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(this);
+
+        // Write a message to the database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance("https://bold-apricot-445309-p8-default-rtdb.asia-southeast1.firebasedatabase.app/");
+//        DatabaseReference myRef = database.getReference("server/saving-data/fireblog");
+//        myRef.setValue("Hello, World!");
+
     }
+
+
 }

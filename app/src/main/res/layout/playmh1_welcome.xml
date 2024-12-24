@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/playmh3_background_welcome"
+    >
+    <ImageView
+        android:id="@+id/logo_headphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/playmh3_logoheadphone_welcome"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_xinchao"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="cursive"
+        android:text="Xin Chào"
+        android:textColor="#F33949AB"
+        android:textSize="70dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        >
+    </TextView>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:indeterminateTint="@color/black"
+        ></ProgressBar>
+</LinearLayout>

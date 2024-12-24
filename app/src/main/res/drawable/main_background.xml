@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient android:startColor="#356EB8"
+        android:centerColor="#397ED5"
+        android:endColor="#75AEF6"
+        android:angle="270"> <item
+        android:offset="0.22"
+        android:color="#356EB8" />
+        <!-- Màu bắt đầu tại 0% -->
+        <item android:offset="0.56" android:color="#397ED5" />
+        <!-- Màu giữa tại 50% -->
+        <item android:offset="1" android:color="#75AEF6" />
+        <!-- Màu kết thúc tại 100% -->
+    </gradient>
+</shape>
+

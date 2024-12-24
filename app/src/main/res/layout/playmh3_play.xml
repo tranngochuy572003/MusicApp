@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mh3_play"
+    android:background="@drawable/main_background">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dành cho bạn"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+    <ImageButton
+        android:id="@+id/icon_search"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/playmh3_search"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="230dp"/>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <LinearLayout
+        android:id="@+id/toolbarplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_tenbaihat"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:maxWidth="250dp"
+            android:singleLine="true"
+            android:text="Tên ca khúc"
+            android:textColor="@color/white"
+            android:textSize="19sp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_tencasi"
+            android:text="Tên ca sĩ"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+
+         ></TextView>
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpaper"
+        android:layout_width="match_parent"
+        android:layout_weight="7"
+        android:layout_height="0dp">
+    </androidx.viewpager.widget.ViewPager>
+    <TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="3"
+    android:orientation="vertical">
+        <TableRow android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_heart"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_replay"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_download"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_share"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_add"
+                android:background="@null"/>
+
+
+        </TableRow>
+        <TableRow android:layout_weight="1"
+            android:background="@color/white">
+            <TextView
+                android:text="00:00"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/txttimesong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                >
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="9"
+                android:background="@color/white" />
+
+            <TextView
+                android:text="00:00"
+                android:id="@+id/txt_totaltimesong"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                ></TextView>
+        </TableRow>
+
+        <TableRow android:layout_weight="1"
+            android:weightSum="5"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_pre"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_pre"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_pause"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_next"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/btn_explore"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_explore"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/btn_user"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/playmh3_user"
+                android:background="@null"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
+</LinearLayout>

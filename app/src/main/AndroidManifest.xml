@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -23,7 +24,7 @@
 <!--        </activity>-->
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".dnmh1_LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,26 +33,21 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".SettingActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".dnmh1_created_playlist_fragementActivity" />
+        <activity android:name=".dnmh3_enterphoneActivity" />
+        <activity android:name=".dnmh4_checkphoneActivity" />
+        <activity android:name=".dnmh5_entersexActivity" />
+        <activity android:name=".dnmh6_SettingActivity" />
+        <activity android:name=".dnmh7_CreatePlaylistActivity" />
+        <activity android:name=".dnmh8_loginwithemailorphoneActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".dkmh1_DangkyActivity" />
+        <activity android:name=".dkmh3_dangkyemailActivity" />
+        <activity android:name=".dkmh3_dangkysdtActivity" />
+        <activity android:name=".dkmh5_dangkythanhcongActivity" />
+        <activity android:name=".dkmh11_XulyNgaySinhNhatActivity" />
 
-        <activity
-            android:name=".CreatePlaylistActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-<!--        <activity android:name=".LoginActivity" />-->
 
     </application>
 

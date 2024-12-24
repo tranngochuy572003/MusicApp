@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "537577998404",
+    "firebase_url": "https://bold-apricot-445309-p8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bold-apricot-445309-p8",
+    "storage_bucket": "bold-apricot-445309-p8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537577998404:android:49e916832d588a5d265411",
+        "android_client_info": {
+          "package_name": "com.example.musicapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWYKmAgw809z9Iv62UKcpjvhtWYaVG4mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

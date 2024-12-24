@@ -1,4 +1,4 @@
-package com.example.musicapp;
+package com.example.musicapp.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,8 +10,8 @@ import com.example.musicapp.fragment.CreatedPlaylistFragment;
 import com.example.musicapp.fragment.FavouriteAlbumFragment;
 import com.example.musicapp.fragment.FavouritePlaylistFragment;
 
-public class MyViewPagerAdapter extends FragmentStatePagerAdapter {
-    public MyViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+public class dnmh1_MyViewPagerAdapter extends FragmentStatePagerAdapter {
+    public dnmh1_MyViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 

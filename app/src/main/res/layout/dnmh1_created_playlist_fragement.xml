@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
 
@@ -28,17 +27,18 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
             <!-- Add Icon -->
+
+            <!-- List Icon -->
             <ImageView
                 android:id="@+id/addIcon"
                 android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_height="37dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/dnmh1_add_circle"
                 android:contentDescription="Add icon"
                 android:elevation="4dp"
                 android:padding="8dp" />
 
-            <!-- List Icon -->
             <ImageView
                 android:id="@+id/listIcon"
                 android:layout_width="40dp"
@@ -88,7 +88,15 @@
                     android:textColor="#808080"
                     android:textSize="12sp" />
             </LinearLayout>
+
+
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="100dp"/>
     </LinearLayout>
 
 
