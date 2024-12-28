@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.musicapp.model.User;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -29,7 +31,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class dnmh4_checkphoneActivity extends AppCompatActivity {
@@ -37,34 +41,34 @@ public class dnmh4_checkphoneActivity extends AppCompatActivity {
     private TextView tvResend;
     private FirebaseAuth mAuth;
     private String verificationId;
-    private String phoneSignIn;
-    private String phoneSignUp;
 
     private String phoneFromSignIn;
-    private String phoneFromSignUp;
-
+    private String phoneFromDangKySDT;
     private String otp;
+    String passWordFromDangKySDT;
+    String userNameFromDangKySDT;
+    User userFromDangNhapSDT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dnmh4_checkphone);
+
+        Intent intent = getIntent();
+        userFromDangNhapSDT = (User) intent.getSerializableExtra("userFromDangNhapSDT");
 
         mAuth = FirebaseAuth.getInstance();
         tvTimer = findViewById(R.id.tvTimer);
         tvResend = findViewById(R.id.tvResend);
         phoneFromSignIn = getIntent().getStringExtra("phoneFromSignIn");
-        phoneFromSignUp = getIntent().getStringExtra("phoneFromSignUp");
+        phoneFromDangKySDT = getIntent().getStringExtra("phoneFromDangKySDT");
+        passWordFromDangKySDT = getIntent().getStringExtra("passWordFromDangKySDT");
+        userNameFromDangKySDT = getIntent().getStringExtra("userNameFromDangKySDT");
 
-        if (phoneFromSignIn != null) {
-            phoneSignIn = phoneFromSignIn.replaceAll(".*?(\\+\\d+)", "$1");
-        }
-        if (phoneFromSignUp != null) {
-            phoneSignUp = phoneFromSignUp.replaceAll(".*?(\\+\\d+)", "$1");
-        }
 
         TextView phoneTextView = findViewById(R.id.tvDescription);
-        phoneTextView.setText(phoneSignIn);
+        phoneTextView.setText(phoneFromSignIn);
 
         startCountDown();
 
@@ -93,12 +97,16 @@ public class dnmh4_checkphoneActivity extends AppCompatActivity {
         });
 
         addTextWatchers(otpFields);
-        if (phoneSignIn != null) {
-            sendVerificationCode(phoneSignIn);
-        } else if (phoneSignUp != null) {
-            sendVerificationCode(phoneSignUp);
+
+        if (phoneFromSignIn != null) {
+            sendVerificationCode(phoneFromSignIn);
+        } else if (phoneFromDangKySDT != null) {
+            sendVerificationCode(phoneFromDangKySDT);
+        }else if (userFromDangNhapSDT != null) {
+            sendVerificationCode(userFromDangNhapSDT.getPhone());
         }
     }
+
 
     private void startCountDown() {
         new CountDownTimer(60000, 1000) {
@@ -112,10 +120,10 @@ public class dnmh4_checkphoneActivity extends AppCompatActivity {
             public void onFinish() {
                 tvResend.setTextColor(Color.parseColor("#4DC4C4"));
                 tvResend.setOnClickListener(v -> {
-                    if (phoneSignIn != null) {
-                        sendVerificationCode(phoneSignIn);
-                    } else if (phoneSignUp != null) {
-                        sendVerificationCode(phoneSignUp);
+                    if (phoneFromSignIn != null) {
+                        sendVerificationCode(phoneFromSignIn);
+                    } else if (phoneFromDangKySDT != null) {
+                        sendVerificationCode(phoneFromDangKySDT);
                     }
                     Toast.makeText(dnmh4_checkphoneActivity.this, "Verification code resent.", Toast.LENGTH_SHORT).show();
                 });
@@ -170,44 +178,21 @@ public class dnmh4_checkphoneActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         FirebaseUser user = task.getResult().getUser();
-
                         if (user != null) {
-                            String uuid = user.getUid();
-                            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("/save_data/User/" + uuid);
-                            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.hasChild("UUID")) {
-                                        String dbUuid = (String) dataSnapshot.child("UUID").getValue();
-                                        if (uuid.equals(dbUuid)) {
-                                            String name = (String) dataSnapshot.child("Name").getValue();
-                                            String date = (String) dataSnapshot.child("Date").getValue();
-
-                                            Intent launchActivity = new Intent(dnmh4_checkphoneActivity.this, dnmh1_LoginActivity.class);
-                                            launchActivity.putExtra("userName", name);
-                                            startActivity(launchActivity);
-                                            finish();
-
-                                        } else {
-                                            Intent launchActivity2 = new Intent(dnmh4_checkphoneActivity.this, dkmh11_XulyNgaySinhNhatActivity.class);
-                                            startActivity(launchActivity2);
-
-                                        }
-                                    } else {
-                                        Log.d("FirebaseDB", "No data found for this user.");
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-                                    Log.e("FirebaseDB", "Error: " + databaseError.getMessage());
-                                }
-                            });
-
-                            Toast.makeText(dnmh4_checkphoneActivity.this, "Verification Success",
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Log.d("FirebaseAuth", "No authenticated user found.");
+                            User userSaved = new User(user.getUid(), userNameFromDangKySDT, null, null, user.getPhoneNumber(), passWordFromDangKySDT,null,null,null);
+                            if (phoneFromSignIn != null) {
+                                Intent launchActivity4 = new Intent(dnmh4_checkphoneActivity.this, dnmh1_LoginActivity.class);
+                                startActivity(launchActivity4);
+                            }
+                            if (userFromDangNhapSDT != null) {
+                                Intent launchActivity6 = new Intent(dnmh4_checkphoneActivity.this, dnmh1_LoginActivity.class);
+                                startActivity(launchActivity6);
+                            }
+                            else{
+                                Intent launchActivity4 = new Intent(dnmh4_checkphoneActivity.this, dkmh11_XulyNgaySinhNhatActivity.class);
+                                launchActivity4.putExtra("user", userSaved);
+                                startActivity(launchActivity4);
+                                finish();                            }
                         }
                     } else {
                         Toast.makeText(dnmh4_checkphoneActivity.this, "Verification Failed",

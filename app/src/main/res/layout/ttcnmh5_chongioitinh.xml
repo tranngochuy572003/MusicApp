@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/quaytrai10"
+        android:id="@+id/quaytrai15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,19 +24,18 @@
         android:id="@+id/thongtincanhan"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginStart="110dp"
         android:layout_marginTop="26dp"
-        android:layout_marginEnd="132dp"
         android:text="Giới tính"
         android:textColor="#F3FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/quaytrai10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
 
     <RadioButton
-        android:id="@+id/dientenman3"
+        android:id="@+id/dientenman5"
         android:layout_width="339dp"
         android:layout_height="35dp"
         android:layout_marginStart="40dp"
@@ -80,7 +79,7 @@
         android:layout_width="339dp"
         android:layout_height="35dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="26dp"
         android:background="#B3C3BEBE"
         android:drawablePadding="10sp"
@@ -93,14 +92,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dientenman3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/capnhatman3"
+        android:id="@+id/capnhatman7"
         android:layout_width="345dp"
         android:layout_height="32dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="26dp"
         android:backgroundTint="#309CFF"
         android:minWidth="100dp"
@@ -111,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/dientenman5" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="415dp"

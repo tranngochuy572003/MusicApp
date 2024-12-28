@@ -108,16 +108,12 @@
             android:id="@+id/policyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tôi đã đọc, hiểu rõ và tự nguyện đồng ý các điều
-                          khoản liên quan về việc thu thập, xử lý dữ liệu cá
-                          nhân, quyền và nghĩa vụ của tôi được quy định trong
-                          Chính sách bảo mật và Thỏa thuận sử dụng, cũng như
-                          các chính sách khác được ban hành bởi NCT"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            android:layout_marginStart="5dp"
             android:layout_gravity="top"
-            android:layout_weight="1" />
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:text="Tôi đã đọc, hiểu rõ và tự nguyện đồng ý các điều khoản liên quan về việc thu thập, xử lý dữ liệu cá nhân, quyền và nghĩa vụ của tôi được quy định trong. Chính sách bảo mật và Thỏa thuận sử dụng, cũng nhưcác chính sách khác được ban hành bởi NCT"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <!-- Login with password -->

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundplayer"
+    android:orientation="vertical"
+    >
+<ImageButton
+    android:id="@+id/search_music"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:background="@drawable/playmh3_search"
+    android:layout_gravity="right"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp">
+</ImageButton>
+    <ImageView
+        android:id="@+id/image_cover"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/playlogo"
+    android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/text_song_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#056DB3"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:id="@+id/text_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#056DB3"
+        />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="65dp"
+    android:layout_gravity="left"
+    android:weightSum="5"
+    android:layout_marginLeft="5dp"
+  >
+    <ImageButton
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/button_previous"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/playmh3_pre"
+        />
+
+    <ImageButton
+        android:layout_weight="1"
+       android:layout_marginLeft="10dp"
+        android:id="@+id/button_play_pause"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/playmh3_play" />
+
+    <ImageButton
+        android:layout_weight="1"
+      android:layout_marginLeft="10dp"
+        android:id="@+id/button_next"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="@drawable/playmh3_next"/>
+    <ImageButton
+        android:layout_weight="1"
+        android:layout_marginLeft="100dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/bamyeuthich"
+        android:background="@drawable/playmh3_heart"></ImageButton>
+<ImageButton
+    android:id="@+id/add"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_marginLeft="15dp"
+    android:background="@drawable/playmh3_add"></ImageButton>
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/didentcanhan"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/playmh3_user"></ImageButton>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
+
+</LinearLayout>

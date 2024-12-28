@@ -2,6 +2,7 @@ package com.example.musicapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -10,23 +11,43 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 
 public class dkmh3_dangkysdtActivity extends AppCompatActivity {
     private TextView tabEmail; // Tab "Email"
     private Button btnSendCode; // Nút "GỬI MÃ"
     private EditText etPhoneNumber; // Trường nhập số điện thoại
-    private CheckBox termsCheckbox; // Chec
+    Spinner countryCodeSpinner;
+    EditText passwordEditText;
+    EditText confirmPasswordEditText;
+    CheckBox agreePolicyCheckBox;
+    EditText userNameEditText;
+    String userName;
+    String password;
+    String onlyCode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dkmh3_dangkysdt);
 
-        // Ánh xạ các thành phần
+        countryCodeSpinner = findViewById(R.id.country_code_spinner);
+        passwordEditText = findViewById(R.id.password);
+        confirmPasswordEditText = findViewById(R.id.confirmPassword);
+        agreePolicyCheckBox = findViewById(R.id.agreePolicy);
+        etPhoneNumber = findViewById(R.id.etPhoneNumber);
         tabEmail = findViewById(R.id.tabEmail);
         btnSendCode = findViewById(R.id.btnSendCode);
-        etPhoneNumber = findViewById(R.id.etPhoneNumber);
-        termsCheckbox = findViewById(R.id.agreePolicy); // Ánh xạ checkbox từ layout
+        userNameEditText = findViewById(R.id.userName);
 
 
         tabEmail.setOnClickListener(new View.OnClickListener() {
@@ -43,21 +64,70 @@ public class dkmh3_dangkysdtActivity extends AppCompatActivity {
         btnSendCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = etPhoneNumber.getText().toString().trim();
 
-                if (!termsCheckbox.isChecked()) {
-                    Toast.makeText(dkmh3_dangkysdtActivity.this, "Vui lòng đồng ý các điều khoản về chính sách bảo mật và thỏa thuận sử dụng.", Toast.LENGTH_LONG).show();
-                } else if (phoneNumber.isEmpty()) {
-                    Toast.makeText(dkmh3_dangkysdtActivity.this, "Vui lòng nhập số điện thoại", Toast.LENGTH_SHORT).show();
-                } else {
-                    Intent intent = new Intent(dkmh3_dangkysdtActivity.this, dnmh4_checkphoneActivity.class);
-                    Spinner spinnerCountry = findViewById(R.id.spinnerCountry);
-                    String selectedCountry = spinnerCountry.getSelectedItem().toString();
-                    intent.putExtra("phoneFromSignUp", selectedCountry + phoneNumber);
+                // Lấy số điện thoại và mã quốc gia
+                String phoneNumber = etPhoneNumber.getText().toString();
+                String countryCode = countryCodeSpinner.getSelectedItem().toString();
+                onlyCode = countryCode.substring(countryCode.lastIndexOf(" ") + 1);
 
-                    startActivity(intent);
+                // Lấy mật khẩu và mật khẩu xác nhận
+                password = passwordEditText.getText().toString();
+                String confirmPassword = confirmPasswordEditText.getText().toString();
+
+                // Kiểm tra người dùng đã đồng ý các điều khoản chưa
+                boolean isAgreed = agreePolicyCheckBox.isChecked();
+
+                userName = userNameEditText.getText().toString();
+
+
+                if (phoneNumber.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                    Toast.makeText(dkmh3_dangkysdtActivity.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                } else if (!password.equals(confirmPassword)) {
+                    Toast.makeText(dkmh3_dangkysdtActivity.this, "Mật khẩu không khớp", Toast.LENGTH_SHORT).show();
+                } else if (!isAgreed) {
+                    Toast.makeText(dkmh3_dangkysdtActivity.this, "Vui lòng đồng ý với các điều khoản", Toast.LENGTH_SHORT).show();
                 }
+                checkPhoneNumberAndRegister(onlyCode + phoneNumber);
+
             }
         });
+
+
     }
+
+    private void checkPhoneNumberAndRegister(String phoneNumber) {
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("/save_data/User");
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot userSnapshot : snapshot.getChildren()) {
+                    String uuid = userSnapshot.getKey();
+                    String phone = snapshot.child(uuid).child("phone").getValue(String.class);
+                    if (phone != null && phone.equals(phoneNumber)) {
+                        Intent launchActivity5 = new Intent(dkmh3_dangkysdtActivity.this, dnmh1_LoginActivity.class);
+                        startActivity(launchActivity5);
+                        Toast.makeText(dkmh3_dangkysdtActivity.this, "So dien thoai da duoc dang ki. Vui long dang nhap", Toast.LENGTH_SHORT).show();
+                        finish();
+                        return;
+
+                    }
+                }
+                Intent intent = new Intent(dkmh3_dangkysdtActivity.this, dnmh4_checkphoneActivity.class);
+                intent.putExtra("phoneFromDangKySDT",  phoneNumber);
+                intent.putExtra("passWordFromDangKySDT", password);
+                intent.putExtra("userNameFromDangKySDT", userName);
+                startActivity(intent);
+                finish();
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Database error: " + error.getMessage());
+            }
+        });
+
+    }
+
 }

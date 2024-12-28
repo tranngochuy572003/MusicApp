@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".MainActivity" />
         <activity android:name=".dnmh1_created_playlist_fragementActivity" />
         <activity android:name=".dnmh3_enterphoneActivity" />
         <activity android:name=".dnmh4_checkphoneActivity" />
@@ -46,7 +46,15 @@
         <activity android:name=".dkmh3_dangkysdtActivity" />
         <activity android:name=".dkmh5_dangkythanhcongActivity" />
         <activity android:name=".dkmh11_XulyNgaySinhNhatActivity" />
+        <activity android:name=".MusicPlayerActivity" />
 
+        <activity android:name=".ttcnmh2_thongtincanhanActivity"/>
+        <activity android:name=".ttcnmh3_dientenActivity"/>
+        <activity android:name=".ttcnmh4_dientieusuActivity"/>
+        <activity android:name=".ttcnmh5_chongioitinhActivity"/>
+        <activity android:name=".ttcnmh6_doisodienthoaiActivity"/>
+        <activity android:name=".ttcnmh7_xacnhandoisoActivity"/>
+        <activity android:name=".chonPlaylistActivity"/>
 
 
     </application>

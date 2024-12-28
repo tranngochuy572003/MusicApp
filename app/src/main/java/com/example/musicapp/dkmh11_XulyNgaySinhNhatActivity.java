@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.musicapp.model.User;
+
 import java.util.Calendar;
 
 public class dkmh11_XulyNgaySinhNhatActivity extends AppCompatActivity {
@@ -20,6 +22,9 @@ public class dkmh11_XulyNgaySinhNhatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dkmh11_nhapngaysinh);
+
+        Intent intent = getIntent();
+        User user = (User) intent.getSerializableExtra("user"); // Receive the object
 
         EditText birthdayEditText = findViewById(R.id.birthdayEditText);
         Button btnContinue = findViewById(R.id.btnContinue);
@@ -47,7 +52,9 @@ public class dkmh11_XulyNgaySinhNhatActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if (!selectedBirthdate.isEmpty()) {
                         Intent intent = new Intent(dkmh11_XulyNgaySinhNhatActivity.this, dnmh5_entersexActivity.class);
-                        intent.putExtra("birthdate", selectedBirthdate);
+                        assert user != null;
+                        user.setDob(selectedBirthdate);
+                        intent.putExtra("user",user);
                         startActivity(intent);
                     } else {
                         Toast.makeText(dkmh11_XulyNgaySinhNhatActivity.this, "Vui lòng chọn ngày sinh trước khi tiếp tục.", Toast.LENGTH_SHORT).show();

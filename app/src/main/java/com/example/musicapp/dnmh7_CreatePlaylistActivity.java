@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,7 +30,6 @@ public class dnmh7_CreatePlaylistActivity extends AppCompatActivity {
         setContentView(R.layout.dnmh7_createplaylist);
         editTextPlaylistName = findViewById(R.id.playlistNameInput);
         buttonCreatePlaylist = findViewById(R.id.createPlaylistButton);
-        databaseReference = FirebaseDatabase.getInstance().getReference("/save_data/Playlists");
 
         buttonCreatePlaylist.setEnabled(false);
         editTextPlaylistName.addTextChangedListener(new TextWatcher() {
@@ -49,7 +50,6 @@ public class dnmh7_CreatePlaylistActivity extends AppCompatActivity {
         buttonCreatePlaylist.setOnClickListener(v -> {
             String playlistName = editTextPlaylistName.getText().toString().trim();
             if (!playlistName.isEmpty()) {
-
                 savePlaylistToFirebase(playlistName);
                 Toast.makeText(this, "Đã tạo playlist: " + playlistName, Toast.LENGTH_SHORT).show();
             }
@@ -63,12 +63,15 @@ public class dnmh7_CreatePlaylistActivity extends AppCompatActivity {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String currentDate = dateFormat.format(new Date());
         HashMap<String, Object> playlistData = new HashMap<>();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         playlistData.put("id", playlistId);
         playlistData.put("name", playlistName);
         playlistData.put("created_at", currentDate);
 
-        databaseReference.child(playlistId).setValue(playlistData)
+        DatabaseReference userPlaylistRef = FirebaseDatabase.getInstance()
+                .getReference("/save_data/User/" + currentUser.getUid() + "/Playlists");
+        userPlaylistRef.child(playlistId).setValue(playlistData)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "Playlist đã được lưu!", Toast.LENGTH_SHORT).show();

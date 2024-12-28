@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.musicapp.model.User;
 
 public class dnmh5_entersexActivity extends AppCompatActivity {
     private String selectedGender = "";
@@ -17,7 +18,8 @@ public class dnmh5_entersexActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dnmh5_entersex_view);
-
+        Intent intent = getIntent();
+        User user = (User) intent.getSerializableExtra("user");
         // Ánh xạ các View
         TextView maleButton = findViewById(R.id.optionMale);
         TextView femaleButton = findViewById(R.id.optionFemale);
@@ -45,9 +47,11 @@ public class dnmh5_entersexActivity extends AppCompatActivity {
             if (selectedGender.isEmpty()) {
                 Toast.makeText(this, "Vui lòng chọn giới tính!", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent = new Intent(dnmh5_entersexActivity.this, dkmh5_dangkythanhcongActivity.class);
-                intent.putExtra("gender", selectedGender);
-                startActivity(intent);
+                Intent intent2 = new Intent(dnmh5_entersexActivity.this, dkmh5_dangkythanhcongActivity.class);
+                assert user != null;
+                user.setGender(selectedGender);
+                intent2.putExtra("user", user);
+                startActivity(intent2);
             }
         });
 
@@ -66,4 +70,6 @@ public class dnmh5_entersexActivity extends AppCompatActivity {
         }
 
     }
+
+
 }

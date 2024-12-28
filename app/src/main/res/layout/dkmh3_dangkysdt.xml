@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <LinearLayout
@@ -15,10 +16,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
             android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
+            android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Back"
+                android:padding="10dp"
+                android:src="@drawable/dk_back" />
 
             <TextView
                 android:id="@+id/title"
@@ -36,32 +44,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tabEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Email"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textSize="16sp"
                 android:padding="8dp"
-                android:textColor="@color/gray" />
+                android:text="Email"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tabPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Số điện thoại"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textSize="16sp"
                 android:padding="8dp"
-                android:textColor="@color/blue" />
+                android:text="Số điện thoại"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -70,47 +78,182 @@
             android:id="@+id/tvPhoneLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:text="Nhập số điện thoại của bạn"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:textColor="@color/black"
-            android:layout_marginBottom="4dp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Số điện thoại mới sẽ được tự động đăng ký sau khi xác thực thành công."
-            android:textSize="14sp"
-            android:textColor="#4A4646"
             android:layout_marginBottom="8dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:text="Số điện thoại mới sẽ được tự động đăng ký sau khi xác thực thành công."
+            android:textColor="#4A4646"
+            android:textSize="14sp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="#e4e4e4"
-            android:padding="10dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/spinnerCountry"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
-                android:entries="@array/countries" />
+                android:text="Tên đăng nhập*"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/etPhoneNumber"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:hint="Số điện thoại"
-                android:textSize="16sp"
-                android:inputType="phone"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:background="@android:color/transparent" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_toLeftOf="@id/imgTogglePassword"
+                    android:background="@drawable/dkmh2_edittext_box"
+                    android:hint="Nhập tên của bạn"
+                    android:padding="12dp"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="#e4e4e4"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <Spinner
+                android:id="@+id/country_code_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:entries="@array/countries" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/dkmh4_dropdown"
+                    android:textSize="16sp" />
+                <EditText
+                    android:id="@+id/etPhoneNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Số điện thoại"
+                    android:inputType="phone"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Password Field -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mật khẩu*"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_toLeftOf="@id/imgTogglePassword"
+                    android:background="@drawable/dkmh2_edittext_box"
+                    android:hint="Nhập mật khẩu"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/imgTogglePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Toggle password visibility"
+                    android:padding="12dp"
+                    android:src="@drawable/dkmh2_eye_off" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- Confirm Password Field -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhập lại mật khẩu*"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_toLeftOf="@id/imgToggleConfirmPassword"
+                    android:background="@drawable/dkmh2_edittext_box"
+                    android:hint="Nhập lại mật khẩu"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/imgToggleConfirmPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Toggle password visibility"
+                    android:padding="12dp"
+                    android:src="@drawable/dkmh2_eye_off"
+                    tools:ignore="DuplicateIds" />
+            </RelativeLayout>
+
         </LinearLayout>
 
         <!-- Checkbox -->
@@ -118,20 +261,20 @@
             android:id="@+id/agreePolicy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:text="Tôi đã đọc, hiểu rõ và tự nguyện đồng ý các điều khoản về việc thu thập, xử lý dữ liệu cá nhân, quyền và nghĩa vụ của tôi được quy định tại Chính sách bảo mật và Thỏa thuận sử dụng, và các chính sách khác được ban hành bởi MUSIC."
-            android:textSize="14sp"
-            android:layout_marginBottom="20dp" />
+            android:textSize="14sp" />
 
         <!-- Send Code Button -->
         <Button
             android:id="@+id/btnSendCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GỬI MÃ"
             android:background="@drawable/dk_button_background"
+            android:text="GỬI MÃ"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:backgroundTint="@null"/>
+            app:backgroundTint="@null" />
     </LinearLayout>
 </ScrollView>

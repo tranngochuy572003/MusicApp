@@ -27,13 +27,12 @@ public class dkmh3_dangkyemailActivity extends AppCompatActivity{
         private boolean isPasswordVisible = false;
         private boolean isConfirmPasswordVisible = false;
 
-        @SuppressLint("MissingInflatedId")
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
             // Liên kết với layout màn hình đăng ký email
-            setContentView(R.layout.dkmh2_dangkyemail);
+            setContentView(R.layout.dkmh3_dangkyemail);
 
             // Ánh xạ các View
             btnRegister = findViewById(R.id.btnRegister);
@@ -91,6 +90,8 @@ public class dkmh3_dangkyemailActivity extends AppCompatActivity{
             tabPhone.setOnClickListener(v -> {
                 Intent intent = new Intent(dkmh3_dangkyemailActivity.this, dkmh3_dangkysdtActivity.class);
                 startActivity(intent);
+                finish();
+
             });
         }
     }

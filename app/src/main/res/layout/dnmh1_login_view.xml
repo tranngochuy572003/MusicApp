@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
- >
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-       >
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -306,7 +306,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="16dp"
         >
 
         <LinearLayout
@@ -319,17 +319,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="21dp"
-                android:src="@drawable/dnmh1_foryou" />
+            <ImageButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fortyou" />
 
             <TextView
+                android:id="@+id/navForYouText"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:text="Dành cho bạn"
-                android:textColor="#000000"
+                android:textColor="#1E88E5"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -344,10 +347,10 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/dnmh1_explore" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/searchatloginpage" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -355,7 +358,7 @@
                 android:fontFamily="sans-serif-black"
 
                 android:text="Khám phá"
-                android:textColor="#000000"
+                android:textColor="#1E88E5"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -371,10 +374,10 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="17dp"
-                android:layout_height="23dp"
-                android:src="@drawable/dnmh1_mine" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/useratloginpage" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -382,7 +385,7 @@
                 android:fontFamily="sans-serif-black"
 
                 android:text="Hồ sơ của tôi"
-                android:textColor="#000000"
+                android:textColor="#1E88E5"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>

@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/quaytrai10"
+        android:id="@+id/quaytrai17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -33,10 +33,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/quaytrai10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/gioithieubanthan"
+        android:id="@+id/gioithieubanthan4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -55,19 +56,20 @@
         android:layout_width="339dp"
         android:layout_height="91dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="30dp"
         android:background="#4DD9DAD2"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gioithieubanthan">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout">
 
         <TableLayout
-            android:layout_width="306dp"
+            android:layout_width="336dp"
             android:layout_height="57dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="5dp"
@@ -81,7 +83,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tenman2"
+                    android:id="@+id/tenman8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tên của bạn"
@@ -91,10 +93,10 @@
 
                 <TextView
 
-                    android:id="@+id/ctsdtman2"
+                    android:id="@+id/ctsdtman7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="140dp"
+                    android:layout_marginStart="110dp"
                     android:layout_marginEnd="5dp"
                     android:text="Tuyết Nhung"
                     android:textColor="#E6FFFFFF"
@@ -121,7 +123,7 @@
                     android:id="@+id/chitietID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="170dp"
+                    android:layout_marginStart="150dp"
                     android:text="3957300"
                     android:textColor="#B3FFFFFF"
                     android:textStyle="bold" />
@@ -149,7 +151,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="362dp"
-        android:layout_height="37dp"
+        android:layout_height="41dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="9dp"

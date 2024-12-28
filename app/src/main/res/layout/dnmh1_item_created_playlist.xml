@@ -9,11 +9,15 @@
         android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Item Name" />
+        android:text="Item Name"
+        android:textStyle="bold" />
+
 
     <TextView
-        android:id="@+id/item_price"
+        android:id="@+id/created_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Item Price" />
+        android:text="Created Date"
+        android:textStyle="bold" />
+
 </LinearLayout>

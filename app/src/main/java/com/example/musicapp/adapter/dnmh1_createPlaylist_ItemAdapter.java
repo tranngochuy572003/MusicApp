@@ -17,6 +17,18 @@ import java.util.List;
 public class dnmh1_createPlaylist_ItemAdapter extends RecyclerView.Adapter<dnmh1_createPlaylist_ItemAdapter.ItemViewHolder> {
 
     private List<Playlist> itemList;
+    private OnItemClickListener onItemClickListener;
+
+    // Interface for item click
+    public interface OnItemClickListener {
+        void onItemClick(Playlist playlist);
+    }
+
+    // Constructor to pass the listener
+    public dnmh1_createPlaylist_ItemAdapter(List<Playlist> itemList, OnItemClickListener listener) {
+        this.itemList = itemList;
+        this.onItemClickListener = listener;
+    }
 
     public dnmh1_createPlaylist_ItemAdapter(List<Playlist> itemList) {
         this.itemList = itemList;
@@ -31,8 +43,15 @@ public class dnmh1_createPlaylist_ItemAdapter extends RecyclerView.Adapter<dnmh1
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Playlist item = itemList.get(position);
-        holder.nameTextView.setText(item.getName());
-        holder.priceTextView.setText(String.valueOf(item.getCreatedDate()));
+        holder.nameTextView.setText("Tên : " + item.getName());
+        holder.createdAt.setText("Ngày tạo : " + item.getCreated_at());
+        // Set the click listener for each item
+        holder.itemView.setOnClickListener(v -> {
+            // Trigger the listener when an item is clicked
+            if (onItemClickListener != null && item.getMusicList() != null) {
+                onItemClickListener.onItemClick(item);
+            }
+        });
     }
 
     @Override
@@ -41,12 +60,13 @@ public class dnmh1_createPlaylist_ItemAdapter extends RecyclerView.Adapter<dnmh1
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView, priceTextView;
+        TextView nameTextView, createdAt;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.item_name);
-            priceTextView = itemView.findViewById(R.id.item_price);
+            createdAt = itemView.findViewById(R.id.created_at);
+
         }
     }
 }

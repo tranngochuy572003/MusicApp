@@ -1,16 +1,37 @@
 package com.example.musicapp.model;
 
+import java.util.List;
+
 public class Playlist {
     private String id;
     private String name;
-    private String createdDate;
+    private String created_at;
+    private List<Music> musicList;
+
 
     public Playlist() {}
 
-    public Playlist(String id, String name, String createdDate) {
+    public Playlist(String id, String name, String created_at, List<Music> musicList) {
         this.id = id;
         this.name = name;
-        this.createdDate = createdDate;
+        this.created_at = created_at;
+        this.musicList = musicList;
+    }
+
+    public List<Music> getMusicList() {
+        return musicList;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
     public String getId() {
@@ -29,12 +50,7 @@ public class Playlist {
         this.name = name;
     }
 
-    public String getCreatedDate() {
-        return createdDate;
-    }
 
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
+
 }
 

@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "@drawable/main_background"
-    android:orientation="vertical"
-    >
+    android:background="@drawable/main_background"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/quaytrai10"
@@ -52,9 +51,9 @@
         android:id="@+id/capnhatman3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
+        android:layout_marginStart="161dp"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="155dp"
+        android:layout_marginEnd="162dp"
         android:backgroundTint="#309CFF"
         android:minWidth="100dp"
         android:minHeight="20dp"
@@ -67,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/avt" />
 
     <TextView
-        android:id="@+id/gioithieubanthan"
+        android:id="@+id/gioithieubanthan1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -85,18 +84,18 @@
         android:layout_width="350dp"
         android:layout_height="200dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="230dp"
         android:layout_marginEnd="30dp"
         android:background="#4DD9DAD2"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gioithieubanthan">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableLayout
-            android:layout_width="311dp"
-            android:layout_height="161dp"
+            android:layout_width="325dp"
+            android:layout_height="170dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
@@ -111,7 +110,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tenman2"
+                    android:id="@+id/tenman4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tên của bạn"
@@ -119,23 +118,32 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <TextView
-
-                    android:id="@+id/ctsdtman2"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="120dp"
-                    android:layout_marginEnd="5dp"
-                    android:text="Tuyết Nhung"
-                    android:textColor="#E6FFFFFF"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ctsdtman2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- Đảm bảo TextView có thể click -->
+
 
                 <ImageView
                     android:id="@+id/quayphai5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:srcCompat="@drawable/ttcn_quayphai" />
+
             </TableRow>
 
             <TableRow
@@ -157,7 +165,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="150dp"
-                    android:text="3957300"
                     android:textColor="#B3FFFFFF"
                     android:textStyle="bold" />
             </TableRow>
@@ -165,10 +172,10 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp">>
+                android:layout_marginTop="15dp">
 
                 <TextView
-                    android:id="@+id/emailman2"
+                    android:id="@+id/emailman4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tiểu sử"
@@ -177,14 +184,15 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/ctemailman2"
+                    android:id="@+id/ctetieusu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="120dp"
                     android:layout_marginEnd="5dp"
                     android:text="Thêm tiểu sử"
                     android:textColor="#B3FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
 
                 <ImageView
                     android:id="@+id/quayphai6"
@@ -196,7 +204,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp">>
+                android:layout_marginTop="15dp">
 
                 <TextView
                     android:id="@+id/matkhauman2"
@@ -211,7 +219,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="130dp"
-                    android:text="03/12/2003"
                     android:textColor="#E6FFFFFF"
                     android:textStyle="bold" />
 
@@ -225,7 +232,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp">>
+                android:layout_marginTop="15dp">
 
                 <TextView
                     android:id="@+id/gioitinhman2"
@@ -238,9 +245,8 @@
                 <TextView
                     android:id="@+id/Numan2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="185dp"
-                    android:text="Nữ"
                     android:textColor="#E6FFFFFF"
                     android:textStyle="bold" />
 
@@ -259,21 +265,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="261dp"
         android:text="Thông tin tài khoản"
         android:textColor="#F5F5F5"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/sdtman2"
+        android:id="@+id/sdtman3"
         android:layout_width="347dp"
         android:layout_height="112dp"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="29dp"
         android:background="#4DD9DAD2"
         android:orientation="vertical"
@@ -282,15 +289,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView16">
 
         <TableLayout
-            android:layout_width="315dp"
-            android:layout_height="90dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="323dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -299,7 +305,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tenman2"
+                    android:id="@+id/tenman5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Số điện thoại"
@@ -309,18 +315,17 @@
 
                 <TextView
 
-                    android:id="@+id/ctsdtman2"
+                    android:id="@+id/ctsdtman8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="120dp"
+                    android:layout_marginStart="100dp"
                     android:layout_marginEnd="5dp"
-                    android:text="0868846729"
                     android:textColor="#E6FFFFFF"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/quayphai5"
+                    android:id="@+id/quayphai8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/ttcn_quayphai" />
@@ -329,10 +334,10 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp">>
+                android:layout_marginTop="15dp">
 
                 <TextView
-                    android:id="@+id/emailman2"
+                    android:id="@+id/emailman5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Email"
@@ -340,18 +345,25 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/ctemailman2"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginEnd="5dp"
-                    android:text="tuXXtnhung@gmail.com"
-                    android:textColor="#E6FFFFFF"
-                    android:textStyle="bold" />
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ctemailman2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/quayphai6"
+                    android:id="@+id/quayphai9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ttcn_quayphai" />
@@ -363,7 +375,7 @@
                 android:layout_marginTop="15dp">>
 
                 <TextView
-                    android:id="@+id/matkhauman2"
+                    android:id="@+id/matkhauman3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mật khẩu"
@@ -371,16 +383,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/suadoiman2"
+                    android:id="@+id/suadoiman3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="155dp"
+                    android:layout_marginStart="140dp"
                     android:text="Sửa đổi"
                     android:textColor="#E6FFFFFF"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/quayphai7"
+                    android:id="@+id/quayphai10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ttcn_quayphai" />
@@ -401,20 +413,82 @@
 
         </TableLayout>
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="415dp"
         android:layout_height="94dp"
-        android:layout_marginTop="47dp"
         android:background="#E61D4476"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sdtman2">
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="415dp"
+            android:layout_height="94dp"
+            android:background="#E61D4476"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TableRow
+                android:id="@+id/tableRow"
+                android:layout_width="419dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ttcn_traitim" />
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ttcn_nhac" />
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ttcn_user" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="412dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="9dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:orientation="horizontal" />
+
+            </TableRow>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TableRow
-            android:id="@+id/tableRow"
+            android:id="@+id/tableRow2"
             android:layout_width="419dp"
             android:layout_height="33dp"
             android:layout_marginTop="10dp"
@@ -427,21 +501,21 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/imageView90"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ttcn_traitim" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/imageView100"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ttcn_nhac" />
 
                 <ImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/imageView110"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -458,7 +532,8 @@
             android:layout_marginBottom="9dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableRow">
+            app:layout_constraintTop_toBottomOf="@+id/tableRow"
+            tools:ignore="NotSibling">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -466,7 +541,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView80"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:text="Dành cho bạn"
@@ -476,7 +551,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textView70"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -487,7 +562,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView60"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -495,10 +570,10 @@
                     android:textAlignment="center"
                     android:textColor="#FCFFFFFF"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
             </LinearLayout>
 
         </TableRow>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

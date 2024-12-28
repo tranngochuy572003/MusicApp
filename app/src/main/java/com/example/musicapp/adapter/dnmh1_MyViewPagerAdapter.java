@@ -18,6 +18,7 @@ public class dnmh1_MyViewPagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
+
         switch (position) {
             case 0:
                 return new CreatedPlaylistFragment();
@@ -47,7 +48,7 @@ public class dnmh1_MyViewPagerAdapter extends FragmentStatePagerAdapter {
                 title = "Playlist yêu thích";
                 break ;
             case 2:
-                title = "Album yêu thich";
+                title = "Khám phá";
                 break ;
         }
         return title;
